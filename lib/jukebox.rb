@@ -22,7 +22,7 @@ def list_method(songs)
   puts "Great Choice"
 end
 
-def play_method (songs)
+def play_method(songs)
   puts "Please enter a song name or number :"
   user_input = gets.strip 
   if user_input == songs 
@@ -41,9 +41,9 @@ def runner
   user_input = gets.strip
   if user_input == list 
    list_method
-  else if user_input == play 
+  elsif user_input == play 
     play_method
-  else if user_input == help 
+  elsif user_input == help 
     help_method
   else 
     exit_method
