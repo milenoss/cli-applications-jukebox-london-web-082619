@@ -7,32 +7,35 @@
 # users_name = gets.strip 
 
 # puts say_hello(users_name)
-
-def help_method
+require 'pry'
+def help
   puts "I accept the following commands:"
    puts " - help : displays this help message"
     puts " - list : displays a list of songs you can play"
-      puts " - play: lets you choose a song to play"
+      puts " - play : lets you choose a song to play"
         puts " - exit : exits this program"
+        
 end
 
 
-def list_method(songs)
+def list(songs)
   songs.each_with_index{|s| s + 1 }
   puts "Great Choice"
 end
 
-def play_method(songs)
-  puts "Please enter a song name or number :"
+def play(songs)
+  puts "Please enter a song name or number:"
   user_input = gets.strip 
-  if user_input == songs 
+ binding.pry
+  if user_input.to_i == songs 
     puts "Playing #{songs}"
+  
   else
-    puts "Invalid input, please try again".
-  end
+    puts "Invalid input, please try again."
+ end
 end
 
-def exit_method
+def exit_jukebox()
   puts "Goodbye"
 end
 
@@ -40,14 +43,13 @@ def runner
   puts "Please enter a command:"
   user_input = gets.strip
   if user_input == list 
-   list_method
-  elsif user_input == play 
-    play_method
-  elsif user_input == help 
-    help_method
+   list
+  elsif user_input.to_i == play 
+    play
+  elsif user_input.to_i == help 
+    help
   else 
-    exit_method
+    exit_jukebox
   
     end
-  end
-
+end
