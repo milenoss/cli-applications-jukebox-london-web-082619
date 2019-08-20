@@ -19,17 +19,20 @@ end
 
 
 def list(songs)
-  songs.each_with_index{|s| s + 1 }
-  puts "Great Choice"
+  songs.each_with_index{|s,index|
+  puts "#{index + 1}.#{s}"
+  }
 end
+
 
 def play(songs)
   puts "Please enter a song name or number:"
   user_input = gets.strip 
- binding.pry
-  if user_input.to_i == songs 
-    puts "Playing #{songs}"
-  
+  # binding.pry
+   if  user_input.to_i >= 1 && user_input.to_i <= songs.length
+    puts "Playing #{songs[user_input.to_i - 1]}"
+    elsif songs.include?(user_input)
+    puts "Playing #{songs.find{|x|x == user_input}}"
   else
     puts "Invalid input, please try again."
  end
