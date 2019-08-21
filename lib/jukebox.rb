@@ -46,12 +46,12 @@ end
 def runner 
   puts "Please enter a command:"
   user_input = gets.strip
-  if user_input == list 
+  if user_input == "list"
   list
   binding.pry
-  elsif user_input == play 
+  elsif user_input == "play"
     play
-  elsif user_input == help 
+  elsif user_input == "help" 
     help
   else 
     exit_jukebox
