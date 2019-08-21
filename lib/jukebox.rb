@@ -48,6 +48,7 @@ def runner
   user_input = gets.strip
   if user_input == list 
   list
+  binding.pry
   elsif user_input == play 
     play
   elsif user_input == help 
