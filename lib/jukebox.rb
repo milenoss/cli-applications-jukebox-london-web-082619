@@ -58,4 +58,3 @@ def runner
     end
 end
 
-run(songs)
