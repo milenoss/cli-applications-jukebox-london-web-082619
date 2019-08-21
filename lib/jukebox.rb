@@ -47,9 +47,9 @@ def runner
   user_input = gets.strip
   if user_input == list 
    list
-  elsif user_input.to_i == play 
+  elsif user_input == play 
     play
-  elsif user_input.to_i == help 
+  elsif user_input == help 
     help
   else 
     exit_jukebox
