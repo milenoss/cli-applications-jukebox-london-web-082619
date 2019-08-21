@@ -20,7 +20,7 @@ end
 
 def list(songs)
   songs.each_with_index{|s,index|
-  puts "#{index + 1}.#{s}"
+  puts "#{index + 1}. #{s}"
   }
 end
 
@@ -42,17 +42,19 @@ def exit_jukebox()
   puts "Goodbye"
 end
 
-def runner 
+
+def run(songs)
   puts "Please enter a command:"
   user_input = gets.strip
-  if user_input == list 
-   list
-  elsif user_input.to_i == play 
-    play
-  elsif user_input.to_i == help 
+  if user_input == "list"
+  list(songs)
+  elsif user_input == "play"
+    play(songs)
+  elsif user_input == "help" 
     help
   else 
     exit_jukebox
   
     end
 end
+
